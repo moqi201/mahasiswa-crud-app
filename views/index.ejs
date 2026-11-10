@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Data Mahasiswa</h1>
+            <p>Kelola data mahasiswa kampus dengan mudah.</p>
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h2>Daftar Mahasiswa</h2>
+
+                <a href="/tambah" class="btn btn-primary">
+                    + Tambah Mahasiswa
+                </a>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>NIM</th>
+                            <th>Jurusan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% mahasiswa.forEach((mhs, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= mhs.nama %></td>
+                            <td><%= mhs.nim %></td>
+                            <td><%= mhs.jurusan %></td>
+
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/edit/<%= mhs.id %>"
+                                       class="btn btn-edit">
+                                        Edit
+                                    </a>
+
+                                    <a href="/hapus/<%= mhs.id %>"
+                                       class="btn btn-delete"
+                                       onclick="return confirm('Yakin hapus?')">
+                                        Hapus
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Mahasiswa</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Tambah Mahasiswa</h1>
+            <p>Tambahkan data mahasiswa baru ke dalam sistem.</p>
+        </div>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h2>Form Data Mahasiswa</h2>
+            </div>
+
+            <form action="/tambah" method="POST">
+
+                <div class="form-group">
+                    <label>Nama Mahasiswa</label>
+                    <input
+                        type="text"
+                        name="nama"
+                        placeholder="Masukkan nama mahasiswa"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>NIM</label>
+                    <input
+                        type="text"
+                        name="nim"
+                        placeholder="Masukkan NIM"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Jurusan</label>
+                    <input
+                        type="text"
+                        name="jurusan"
+                        placeholder="Masukkan jurusan"
+                        required
+                    >
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Simpan Data
+                    </button>
+
+                    <a href="/" class="btn btn-secondary">
+                        Kembali
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -54,7 +54,7 @@ Built with Node.js, Express.js, EJS, and MySQL, this application provides essent
 
 **01 — Student Dashboard**
 
-<img src="./images/datadsswa.png" width="100%" alt="Student Dashboard">
+<img src="./image/datadsswa.png" width="100%" alt="Student Dashboard">
 
 <sub>Centralized view of student records and information.</sub>
 
@@ -62,7 +62,7 @@ Built with Node.js, Express.js, EJS, and MySQL, this application provides essent
 
 **02 — Add Student**
 
-<img src="./images/tambahsiswa.png" width="100%" alt="Add Student">
+<img src="./image/tambahsiswa.png" width="100%" alt="Add Student">
 
 <sub>A simple form for registering new student information.</sub>
 
@@ -70,7 +70,7 @@ Built with Node.js, Express.js, EJS, and MySQL, this application provides essent
 
 **03 — Edit Student**
 
-<img src="./images/edit.png" width="100%" alt="Edit Student">
+<img src="./image/edit.png" width="100%" alt="Edit Student">
 
 <sub>Update student information with ease.</sub>
 

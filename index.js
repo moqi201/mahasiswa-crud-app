@@ -2,18 +2,22 @@
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Set EJS sebagai template engine
+// ================= CONFIGURATION =================
+
+// EJS Configuration
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Menghubungkan folder public untuk CSS dan asset lainnya
-app.use(express.static('public'));
-
-// ================= KONEKSI DATABASE TiDB =================
+// ================= DATABASE CONNECTION =================
 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
@@ -27,6 +31,15 @@ const db = mysql.createPool({
     },
     waitForConnections: true,
     connectionLimit: 5
+});
+
+// Cek koneksi database
+db.query('SELECT 1', (err) => {
+    if (err) {
+        console.error('Database connection error:', err.message);
+    } else {
+        console.log('Berhasil terhubung ke database TiDB');
+    }
 });
 
 // ================= ROUTING CRUD =================
@@ -70,18 +83,22 @@ app.post('/tambah', (req, res) => {
 app.get('/edit/:id', (req, res) => {
     const id = req.params.id;
 
-    db.query('SELECT * FROM mahasiswa WHERE id = ?', [id], (err, results) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Gagal mengambil data mahasiswa');
-        }
+    db.query(
+        'SELECT * FROM mahasiswa WHERE id = ?',
+        [id],
+        (err, results) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Gagal mengambil data mahasiswa');
+            }
 
-        if (results.length === 0) {
-            return res.status(404).send('Mahasiswa tidak ditemukan');
-        }
+            if (results.length === 0) {
+                return res.status(404).send('Mahasiswa tidak ditemukan');
+            }
 
-        res.render('edit', { mhs: results[0] });
-    });
+            res.render('edit', { mhs: results[0] });
+        }
+    );
 });
 
 // UPDATE: Proses edit data
@@ -107,22 +124,28 @@ app.post('/edit/:id', (req, res) => {
 app.get('/hapus/:id', (req, res) => {
     const id = req.params.id;
 
-    db.query('DELETE FROM mahasiswa WHERE id = ?', [id], (err) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Gagal menghapus data mahasiswa');
-        }
+    db.query(
+        'DELETE FROM mahasiswa WHERE id = ?',
+        [id],
+        (err) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Gagal menghapus data mahasiswa');
+            }
 
-        res.redirect('/');
-    });
+            res.redirect('/');
+        }
+    );
 });
 
-// Jalankan server secara lokal
+// ================= SERVER =================
+
+// Jalankan server untuk lokal
 if (require.main === module) {
     app.listen(port, () => {
         console.log(`Server berjalan di http://localhost:${port}`);
     });
 }
 
-// Export app untuk Vercel
+// Export untuk Vercel
 module.exports = app;

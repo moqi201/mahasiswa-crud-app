@@ -54,7 +54,7 @@ Built with Node.js, Express.js, EJS, and MySQL, this application provides essent
 
 **01 — Student Dashboard**
 
-<img src="./image/datadsswa.png" width="100%" alt="Student Dashboard">
+<img src="./image/datasswa.png" width="100%" alt="Student Dashboard">
 
 <sub>Centralized view of student records and information.</sub>
 

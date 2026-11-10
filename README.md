@@ -1,53 +1,90 @@
  <div align="center">
 
-# 🎓 Student Management System
+# STUDENT MANAGEMENT SYSTEM
 
-**Aplikasi Manajemen Data Mahasiswa**
+**A Modern Student Data Management Application**
 
-Aplikasi CRUD sederhana untuk mengelola data mahasiswa menggunakan Node.js, Express.js, EJS, dan MySQL.
+A simple web-based application designed to manage student records efficiently through a clean and intuitive interface.
 
 <br>
 
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
-<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
-<img src="https://img.shields.io/badge/EJS-B4CA65?style=for-the-badge&logo=ejs&logoColor=black" />
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white">
+<img src="https://img.shields.io/badge/Express.js-444444?style=flat-square&logo=express&logoColor=white">
+<img src="https://img.shields.io/badge/EJS-B4CA65?style=flat-square&logo=ejs&logoColor=white">
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white">
 
 <br><br>
 
-**Simple · Modern · Efficient**
+[Overview](#overview) · [Features](#features) · [Preview](#application-preview) · [Installation](#installation)
 
 </div>
 
 ---
 
-## 📌 About Project
+## Overview
 
-**Student Management System** merupakan aplikasi berbasis web yang digunakan untuk mengelola data mahasiswa secara sederhana.
+Student Management System is a web application developed to simplify the management of student information.
 
-Project ini dibuat menggunakan konsep CRUD (Create, Read, Update, Delete) dengan database MySQL sebagai penyimpanan data.
+Built with Node.js, Express.js, EJS, and MySQL, this application provides essential data management functionality through a minimal and user-friendly interface.
 
-## ✨ Features
+## Features
 
-| Features | Description |
-|:---|:---|
-| ➕ Create | Menambahkan data mahasiswa |
-| 📋 Read | Menampilkan seluruh data mahasiswa |
-| ✏️ Update | Mengubah data mahasiswa |
-| 🗑️ Delete | Menghapus data mahasiswa |
-| 🗄️ MySQL | Menyimpan data ke database |
+| Feature | Description |
+|:--|:--|
+| **Create** | Add new student records |
+| **Read** | Display student information |
+| **Update** | Edit existing student records |
+| **Delete** | Remove student records |
+| **Database** | MySQL database integration |
+| **Interface** | Minimalist and responsive design |
 
-## 🛠️ Tech Stack
+## Technology Stack
 
-- **Backend:** Node.js & Express.js
-- **Frontend:** EJS, HTML, CSS
-- **Database:** MySQL
-- **Package Manager:** NPM
+| Technology | Purpose |
+|:--|:--|
+| Node.js | JavaScript runtime |
+| Express.js | Backend framework |
+| EJS | Template engine |
+| HTML & CSS | User interface |
+| MySQL | Relational database |
 
-## 📁 Project Structure
+## Application Preview
+
+<div align="center">
+
+**01 — Student Dashboard**
+
+<img src="./images/datadsswa.png" width="100%" alt="Student Dashboard">
+
+<sub>Centralized view of student records and information.</sub>
+
+<br><br>
+
+**02 — Add Student**
+
+<img src="./images/tambahsiswa.png" width="100%" alt="Add Student">
+
+<sub>A simple form for registering new student information.</sub>
+
+<br><br>
+
+**03 — Edit Student**
+
+<img src="./images/edit.png" width="100%" alt="Edit Student">
+
+<sub>Update student information with ease.</sub>
+
+</div>
+
+## Project Structure
 
 ```text
 student-management-system/
+│
+├── images/
+│   ├── datadsswa.png
+│   ├── tambahsiswa.png
+│   └── edit.png
 │
 ├── public/
 │   └── css/
@@ -63,33 +100,42 @@ student-management-system/
 ├── package.json
 ├── package-lock.json
 ├── tailwind.config.js
+├── vercel.json
 ├── .gitignore
 └── README.md
 ```
 
-## 🚀 Installation
+## Installation
 
-**1. Clone Repository**
+### Prerequisites
+
+Make sure you have installed:
+
+- Node.js
+- NPM
+- MySQL
+
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/USERNAME/student-management-system.git
 ```
 
-**2. Masuk ke Folder Project**
+### 2. Navigate to Project
 
 ```bash
 cd student-management-system
 ```
 
-**3. Install Dependencies**
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-**4. Konfigurasi Database**
+### 4. Setup Database
 
-Buat database MySQL dengan nama:
+Create a MySQL database:
 
 ```sql
 CREATE DATABASE kampus_db;
@@ -104,42 +150,32 @@ CREATE TABLE mahasiswa (
 );
 ```
 
-**5. Jalankan Aplikasi**
+### 5. Configure Database
+
+Adjust the database configuration in `index.js` according to your local MySQL setup.
+
+### 6. Run Application
 
 ```bash
 node index.js
 ```
 
-Buka browser dan akses:
+Open your browser:
 
 ```text
 http://localhost:3000
 ```
 
-## 📸 Application Preview
-
-<div align="center">
-
-*Student Management System – Dashboard Data Mahasiswa*
-
-</div>
-
-## 👨‍💻 Developer
-
-<div align="center">
-
-**Developed with ❤️**
-
-Student Management System
-
-*Learning Project – CRUD Application*
-
-</div>
-
 ---
 
 <div align="center">
 
-© 2026 Student Management System
+### STUDENT MANAGEMENT SYSTEM
+
+Designed for simplicity. Built for efficiency.
+
+<br>
+
+**Olenn · 2026**
 
 </div>
